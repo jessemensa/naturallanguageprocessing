@@ -1,0 +1,67 @@
+Natural Language Processing 
+- Types of Natural Language Processing. 
+- Classical vs Deep Learning Models. 
+- Bag-of-words model. 
+
+Different Types of Natural Language Processing. 
+Natural Language Processing => any algo that has to do with processing natural language into machine 
+terms. 
+Deep Learning => Neural network models that has to do with natural language processing. 
+
+Examples of nlp 
+chatbots(if/else rules)
+Audio frequency component analysis(speech recognition) 
+Bag of words model (Classification) 
+CNN for text recognition(classification) 
+
+
+- Using the bag of words model 
+Bag of words model is a way of extracting features from text for use in modelling. 
+is a representation of text that describes the occurence of words within a document 
+two things 
+- vocabulary of known words.  
+- measure of the presence of known words. 
+
+bag of words because any information about the order or structure of words in the document is 
+discarded. The model is only concerned with whether known words occur in the document and not 
+where in the document. 
+
+
+- Collect data 
+- design a vocabulary
+- create document vector 
+train model on training data, all ordering of the words is normally discarded and get a consistent 
+way of extracting features from any document. 
+New documents, that overlap with the vocabulary of known words, but may contain words outside 
+of the vocabulary can still be encoded, where only the occurence of known words are scored and 
+unknown words are ignored. 
+- add document vector to training data and let it predict 
+As the vocabulary size increases, so does the vector representation of the document 
+Imagine a large corpus, thousands of books, vector might be thousands or millions of positions 
+Each document might contain very few of the known words in the vocabulary, this results in a 
+vector with lots of zeros scores, sparse vectors require more memory and computational 
+resources when modelling. 
+Text cleaning techniques can be used or create a vocabulary of grouped words, 
+this allows the bag of words to capture a bit more meanung 
+
+Bigram Model => creating a vocabulary of two worded pairs 
+ie "it was", "was the", "the best" 
+
+once the vocabulary has been chosen, the occurence of words needs to be scored. 
+scoring methods => counts(number of times each word appears in a document) 
+frequencies=> calculate frequency to which each word appears in a document out of all the 
+words in the document. 
+
+limitations => vocabulary(carefully designed), sparsity(makes it harder to model 
+for computational reasons and information reasons), Meaning(discarding word order ignores 
+the context, context and meanings offer a lot to the model). 
+
+or use a neural network 
+feed all the vector data into an input layer and go through as many hidden layers as i want and get 
+an output layer.(train the model)
+feed in the data vector and get an answer 
+
+so either a normal bag of words model(logistic regression) or dnlp(deep learning bag of words model) 
+
+Bag of words has limitations and issues 
+Response is just yes or no(can't build a chatbot w bag of words model) 
